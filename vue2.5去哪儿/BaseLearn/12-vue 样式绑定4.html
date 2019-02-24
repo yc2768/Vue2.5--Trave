@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>样式绑定 style  数组可以包含多个对象</title>
+	<script type="text/javascript" src="./vue.js"></script>
+    
+
+</head>
+<body>
+	 <div id="app"  @click="handleClick"   :style="[styleObj,{fontSize:'20px'}]">
+	 	
+           Hello World!
+	 </div>
+
+     <script type="text/javascript">
+          var vm=new Vue({
+
+          	  el:"#app",
+          	  data:{
+          	  	 styleObj:{
+                    color:"black"
+                 }
+          	  },
+          	  methods:{
+          	  	handleClick:function(){
+          	  		this.styleObj.color=this.styleObj.color==="black" ? "red":"black";
+          	  	}
+          	  }
+          })
+     </script>
+</body>
+</html>

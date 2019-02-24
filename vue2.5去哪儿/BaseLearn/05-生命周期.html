@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生命周期</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+	<script type="text/javascript">
+
+	 //生命周期函数，当Vue在某一时间执行
+      var vm=new Vue({
+         el:"#app",
+         template:"<div>{{test}}</div>",
+         data:{
+         	test:"hello"
+         },
+
+         beforeCreate:function(){
+         	//在vm创建之前执行
+         	console.log("beforeCreate");
+         },
+         created:function(){
+            //vm 创建完成执行
+         	console.log("created");
+         },
+         beforeMount:function(){
+         	//在el渲染之前执行
+         	console.log(this.$el);
+         	console.log("beforeMount");
+         },
+         mounted:function(){
+            //在el渲染后执行
+            console.log(this.$el);
+         	console.log("mounted");
+         },
+         beforeDestroy:function(){
+         	//在调用vm.$destroy执行
+         	console.log("beforeDestroy");
+         },
+         destroyed:function(){
+            //在调用vm.$destroy执行
+         	console.log("destroyed");
+         },
+         beforeUpdate:function(){
+         	//在改变绑定的数据值是执行
+         	console.log("beforeUpdate");
+         },
+         updated:function(){
+            //在改变绑定的数据值是执行
+         	console.log("updated");
+         }
+      })
+         
+	</script>
+</body>
+</html>

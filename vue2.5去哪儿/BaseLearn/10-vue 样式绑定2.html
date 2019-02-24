@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>样式绑定 class 数组</title>
+	<script type="text/javascript" src="./vue.js"></script>
+    <style type="text/css">
+       .actived{
+       	  color: red;
+       }
+    </style>
+
+</head>
+<body>
+	 <div id="app"  @click="handleClick"   :class="[actived]">
+	 	
+           Hello World!
+	 </div>
+
+     <script type="text/javascript">
+          var vm=new Vue({
+
+          	  el:"#app",
+          	  data:{
+          	  	 actived:""
+          	  },
+          	  methods:{
+          	  	handleClick:function(){
+          	  		this.actived=this.actived==="actived" ? "":"actived";
+          	  	}
+          	  }
+          })
+     </script>
+</body>
+</html>

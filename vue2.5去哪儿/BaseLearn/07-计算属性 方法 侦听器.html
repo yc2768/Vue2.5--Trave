@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性 方法 侦听器</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+     <p>{{fullName}}</p>
+   </div>
+	<script type="text/javascript">
+
+	 
+      var vm=new Vue({
+         el:"#app",
+         data:{
+            firstName:"Davad",
+            lastName:"Vue",
+            // fullName:"Davad Vue1"
+         },
+         // watch:{//侦听器 也有缓存，但是麻烦建议用计算属性
+         //     firtName:function(){
+         //      return this.fullName= this.firstName+" "+this.lastName;
+         //    },
+         //    lastName:function(){
+         //      return this.fullName= this.firstName+" "+this.lastName;
+         //    }
+         // }
+
+         computed:{ //计算属性有缓存
+            fullName:function(){
+              return this.firstName+" "+this.lastName;
+            }
+         }
+      })
+         
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!--  false 不会渲染 -->
+		<div v-if="show" data-test="v-if">{{message}}</div> 
+		<div v-else-if="!show">v-else-if</div>
+		<div v-else>v-else</div>
+		<!-- 会生成节点给隐藏了 -->
+		<div v-show="show" data-test="v-show" >{{message}}</div>  
+	</div>
+      
+	<script type="text/javascript">
+         var vm=new Vue({
+              el:"#app",
+              data:{
+              	show:false,
+              	message:"Hello World"
+              }
+
+         })
+	</script>
+</body>
+</html>

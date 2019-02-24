@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Compent</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="inputValue"/>	
+		<button v-on:click="btnClick">提交</button>
+        <ul>
+        	<todo-item v-bind:content="item"
+        	           v-for="item in list">
+            </todo-item>
+        </ul>
+	</div>
+	<script type="text/javascript">
+      
+      //全局组件
+      // Vue.component("TodoItem",{
+      // 	props:['content'],
+      // 	template:"<li>{{content}}</li>"
+      // })
+
+
+       //局部组件
+       var TodoItem={
+       	 props:['content'],
+       	 template:"<li>{{content}}</li>"
+       }
+      var app=new Vue({
+      	el:'#app',
+      	components:{  //局部组件需要注册
+            TodoItem:TodoItem
+      	},
+      	data:{
+      		inputValue:'',
+      		list:[]
+      	},
+      	methods:{
+      		btnClick:function(){
+      			this.list.push(this.inputValue),
+      			this.inputValue=''
+      		}
+      	}
+
+      })
+
+	</script>
+</body>
+</html>
