@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue中插槽（Slot）作用域插槽</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+          <body-content>
+                 <template slot-scope="props">
+                       <h1>{{props.item}}</h1>
+                 </template>
+          </body-content>
+              
+	</div>
+     
+     
+	<script type="text/javascript">
+          
+        Vue.component('body-content', {
+             data:function(){
+                return{
+                  list:[1,2,3,4]
+                }
+             },
+             template:  "<div> <ul> <slot v-for='item of list' :item=item> </slot> </ul></div>"
+        })
+         
+        
+         var vm=new Vue({
+               
+              el:"#app"
+                            
+         })
+	</script>
+</body>
+</html>

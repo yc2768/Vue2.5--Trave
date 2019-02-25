@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件参数校验与非Props特性</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+             <counter content="child1"></counter> 
+             
+	</div>
+     
+     
+	<script type="text/javascript">
+          
+          Vue.component('counter',{
+              props:{
+                content:{
+                  type:String,
+                  reqiored:false,
+                  default:'default value',
+                  validator:function(value)
+                  {
+                    return (value.length>5)
+                  }
+                }
+              },
+              template:'<div>{{content}}</div>' 
+          })
+
+        
+         var vm=new Vue({
+               
+              el:"#app",
+              
+              
+              
+
+         })
+	</script>
+</body>
+</html>

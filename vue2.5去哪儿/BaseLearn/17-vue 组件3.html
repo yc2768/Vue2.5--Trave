@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件中的细节点</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+
+    <!-- 父组件接受chang事件  ref 在组件中是获得组件的引用，在标签中可以获得标签中的内容改变dom-->
+		 <counter ref="one" @change="handchange"></counter> 
+     <counter ref="two" @change="handchange"></counter>
+     <div>{{total}}</div>
+
+	</div>
+     
+     <!-- 在子组件中data 必须是函数 -->
+	<script type="text/javascript">
+          Vue.component('counter',{
+
+            data:function(){
+               return {
+                   number:0
+               }   
+               
+            },
+            template:"<div @click='handleclick'>{{number}}</div>",
+            methods:{
+               handleclick:function(){
+                 this.number++
+                 this.$emit('change') //向父组件发射事件
+               }
+            }
+          })
+
+         var vm=new Vue({
+              el:"#app",
+              data:{
+                total:0
+              },
+              methods:{
+                handchange:function(){
+                  this.total=this.$refs.one.number+this.$refs.two.number;
+                }
+              }
+              
+
+         })
+	</script>
+</body>
+</html>

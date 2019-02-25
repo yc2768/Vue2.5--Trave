@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父组件向子组件传递数据</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+             <counter :count="2" @inc="handleInc"></counter> 
+             
+	</div>
+     
+     
+	<script type="text/javascript">
+          
+
+         var counter={
+                props:['count'],
+                data:function(){
+                  return{
+                    number:this.count
+                  }
+                },
+                template: '<div @click="handclick">{{number}}</div>',
+                methods:{
+                   handclick:function(){
+                    this.number++
+                    this.$emit('inc',this.number)
+                   }
+                }
+         }
+
+         var vm=new Vue({
+               
+              el:"#app",
+              components:{
+                counter:counter
+              },
+              data:{
+                 total:0
+              },
+              methods:{
+                 handleInc:function(number){
+                       alert(number)
+                 }
+              }
+              
+              
+
+         })
+	</script>
+</body>
+</html>

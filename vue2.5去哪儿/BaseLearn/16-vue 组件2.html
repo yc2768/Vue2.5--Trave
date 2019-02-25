@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件中的细节点</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		 <table>
+           <tr is="row"></tr>
+           <tr is="row"></tr>
+           <tr is="row"></tr>  
+     </table>
+	</div>
+     
+     <!-- 在子组件中data 必须是函数 -->
+	<script type="text/javascript">
+          Vue.component('row',{
+
+            data:function(){
+               return {
+                  content:"this is row"
+               }   
+               
+            },
+            template:"<tr><td>{{content}}</td></tr>"
+          })
+
+         var vm=new Vue({
+              el:"#app"
+              
+
+         })
+	</script>
+</body>
+</html>

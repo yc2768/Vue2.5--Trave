@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>给组件绑定原生事件</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+             <counter @click.native="handleClick"></counter> 
+             
+	</div>
+     
+     
+	<script type="text/javascript">
+          
+          Vue.component('counter',{
+              
+              template:'<div>counter</div>' 
+          })
+
+        
+         var vm=new Vue({
+               
+              el:"#app",
+              
+              methods:{
+                  handleClick:function(){
+                     alert("handleClick");
+                  }
+              }
+              
+
+         })
+	</script>
+</body>
+</html>

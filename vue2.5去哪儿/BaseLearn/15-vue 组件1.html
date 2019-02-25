@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件中的细节点</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		 <table>
+           <tr is="row"></tr>
+           <tr is="row"></tr>
+           <tr is="row"></tr>  
+     </table>
+	</div>
+     
+	<script type="text/javascript">
+          Vue.component('row',{
+            template:"<tr><td>this a row</td></tr>"
+          })
+
+         var vm=new Vue({
+              el:"#app"
+              
+
+         })
+	</script>
+</body>
+</html>
