@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue中使用animate.css 两种动画使用过渡动画和keyframe动画</title>
+	<script type="text/javascript" src="./vue.js"></script>
+ <link rel="stylesheet" type="text/css" href="./animate.css">
+ <style type="text/css">
+       .v-enter,
+       .v-leave-to{
+           opacity:0;
+       }
+       .v-enter-active,
+       .v-leave-active{
+          transition: opacity 1s;
+       }
+  </style>
+</head>
+<body>
+	<div id="app">
+          <transition 
+
+               :duration="{enter:5000,leave:1000}"
+               name="fade"
+               appear
+               enter-active-class="animated swing"
+               leave-active-class="animated shake"
+               appear-active-class="animated swing"
+          >
+                  <div v-if="show">hello</div>
+          </transition>
+            <button @click="handleClick">切换</button>  
+	</div>
+     
+     
+	<script type="text/javascript">
+          
+       
+         
+        
+         var vm=new Vue({
+               
+              el:"#app",
+              data:{
+                  show:true
+              },
+              methods:{
+                  handleClick:function(){
+                     this.show=!this.show;
+                  }
+              }
+                            
+         })
+	</script>
+</body>
+</html>

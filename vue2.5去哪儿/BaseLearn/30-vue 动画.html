@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue中动画的封装 js</title>
+	<script type="text/javascript" src="./vue.js"></script>
+  
+</head>
+<body>
+	<div id="app">
+            <fade :show="show"><div>hello1</div></fade>
+            <fade :show="show"><h1>hello2</h1></fade>
+            <button @click="handleClick">切换</button>  
+	</div>
+     
+     
+	<script type="text/javascript">
+          
+          Vue.component('fade',{
+               props:['show'],
+               template: '<transition  @before-enter="handleBeforeEnter" @enter="handleEnter"><slot v-if="show">hello</slot> </transition>',
+           methods:{
+              handleBeforeEnter:function(el)
+                  {
+                      el.style.clor='red';
+                  },
+                  handleEnter:function(el,done)
+                  {
+                       setTimeout(()=>{
+                            el.style.clor='green';
+                       }, 2000)
+                  },
+           }
+          })
+       
+          
+         var vm=new Vue({
+               
+              el:"#app",
+              data:{
+                  show: true
+              },
+              methods:{
+                  handleClick:function(){
+                     this.show=!this.show;
+                  }
+                  
+              }
+                            
+         })
+	</script>
+</body>
+</html>
