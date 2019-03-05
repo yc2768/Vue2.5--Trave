@@ -108,5 +108,5 @@ export default {
     line-height: .4rem
     text-align : center
     color: $darkTextColor
-    ellipse()
+    ellipsis()
 </style>
