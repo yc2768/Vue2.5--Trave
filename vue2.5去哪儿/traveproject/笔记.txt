@@ -1,3 +1,4 @@
 安装stylus     npm install stylus   --save   , npm  install  stylus-loader  --save   css预处理器可以通过变量修改参数
 安装vue-awesome-swiper    npm   install  vue-awesome-swiper@2.6.7 --save
 安装 axios 进行ajax异步请求  npm  install  axios --save
+安装better-scroll          npm   install   better-scroll  --save
