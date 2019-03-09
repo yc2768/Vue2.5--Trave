@@ -1,5 +1,7 @@
 # trave
 用Vue实现去哪儿项目实战
+# LearnVue
+学习Vue框架，并实战vue仿去哪儿移动网站，学习了用axios异步请求json,填充到子组件中去，主要开发Home页面和City页面，把各个页面拆分成各个组件进行完成
 >  trave
 
 ## Build Setup
