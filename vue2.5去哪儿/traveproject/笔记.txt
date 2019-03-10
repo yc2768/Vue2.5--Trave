@@ -2,3 +2,4 @@
 安装vue-awesome-swiper    npm   install  vue-awesome-swiper@2.6.7 --save
 安装 axios 进行ajax异步请求  npm  install  axios --save
 安装better-scroll          npm   install   better-scroll  --save
+安装vuex   不同组件数据共享   npm  install    vuex --save       新建store文件夹新建index.js  ,再往main.js中添加

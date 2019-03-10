@@ -36,7 +36,7 @@ export default {
     }
   },
   updated () {
-    this.startY = this.$ref['A'][0].offsetTop
+    this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
     handleLetterClick (e) {
