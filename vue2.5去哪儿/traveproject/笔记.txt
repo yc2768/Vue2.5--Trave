@@ -3,3 +3,5 @@
 安装 axios 进行ajax异步请求  npm  install  axios --save
 安装better-scroll          npm   install   better-scroll  --save
 安装vuex   不同组件数据共享   npm  install    vuex --save       新建store文件夹新建index.js  ,再往main.js中添加
+
+npm run build 打包项目    Config目录下配置打包文件家 assetsPublicPath: '/Web', 在服务器上就对应Web目录
